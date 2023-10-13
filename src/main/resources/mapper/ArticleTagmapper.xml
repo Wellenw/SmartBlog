@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.ArticleTagMapper">
+
+    <insert id="insert" >
+        INSERT INTO
+            tb_article_tags(article_id,tag_id,created_time,modified_time)
+        VALUES
+            <foreach collection="tagsId" separator="," item="tagId">
+                (#{articleId},#{tagId},Now(),Now())
+            </foreach>
+    </insert>
+</mapper>

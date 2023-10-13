@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.mapper.ArticleMapper">
+
+    <insert id="insert" >
+        INSERT INTO
+            tb_articles(
+                       title,
+                       type, content, status, user_id, created_time, modified_time)
+        VALUES (#{title}, #{type}, #{content}, #{status}, #{userId}, now(), now())
+    </insert>
+</mapper>
